@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <script src="jquery-2.2.4.js"></script>
-    <title>Partie5,ex1</title>
-  </head>
-  <body>
-<select class="Game" name="">
-  <option value="pierre">Pierre</option>
-  <option value="feuille">Feuille</option>
-  <option value="ciseau">Ciseau</option>
-</select>
-<button type="button" name="button" id="Shifumi">Shifumi!</button>
-<script>
+<head>
+  <meta charset="utf-8">
+  <script src="jquery-2.2.4.js"></script>
+  <title>Partie5,ex1</title>
+</head>
+<body>
+  <select class="Game" name="Shifumi">
+    <option value="pierre">Pierre</option>
+    <option value="feuille">Feuille</option>
+    <option value="ciseau">Ciseau</option>
+  </select>
+  <button type="button" name="button" id="Shifumi">Shifumi!</button>
+  <script>
 
-$("#Shifumi").click(function(){
-  var hasard = ["pierre","feuille","ciseau"];
-  var joueur = $(".Game").val();  // recuper la liste deroulante
-  var nbre = Math.floor(Math.random()*3);  // nbre aleatoire entre 0 et 2
-  var ordi = hasard[nbre];
-  alert('joueur: ' + joueur + ' ordi: ' + ordi);  // pour afficher les choix
-if (ordi==joueur) {  // si l'ordi et le joueur choisisse le mm
-  alert("Egalité");
-}else if (ordi=="feuille" && joueur =="pierre" || ordi=="ciseau" && joueur =="feuille"||ordi=="pierre" && joueur=="ciseau"){
-  alert("vous avez perdu");
-}else {
-  alert("vous avez gagné");
-}
+  $("#Shifumi").click(function(){
+    var hasard = ["pierre","feuille","ciseau"];
+    var joueur = $(".Game").val();  // recuper la liste deroulante
+    var nbre = Math.floor(Math.random()*3);  // nbre aleatoire entre 0 et 2
+    var ordi = hasard[nbre];
+    alert('joueur: ' + joueur + ' ordi: ' + ordi);  // pour afficher les choix
+    if (ordi==joueur) {  // si l'ordi et le joueur choisisse le mm
+    alert("Egalité");
+  }else if ((ordi=="feuille" && joueur =="pierre") || (ordi=="ciseau" && joueur =="feuille") || (ordi=="pierre" && joueur=="ciseau")){
+    alert("vous avez perdu");
+  }else {
+    alert("vous avez gagné");
+  }
 });
 </script>
-  </body>
+</body>
 </html>
